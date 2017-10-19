@@ -40,6 +40,8 @@ OBJ += $(foreach file, $(SRCPP), $(file:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o))
 
 CC:=mpicc
 CFLAGS:=-O3 -I./$(INCDIR) -fopenmp
+NPROC:=1	
+MPIFLAGS:=-np $(NPROC)
 
 USER_LIBS:=-lpthread
 DEFAULT_LIBS:=-lm
@@ -72,7 +74,7 @@ main: $(OBJ)
 .PHONY: run
 # Run directives
 run:
-	$(DEBUGGER) ./$(BLDDIR)/$(NAME) $(RUN_ARGS)
+	$(DEBUGGER) ./$(BLDDIR)/$(NAME) $(MPIFLAGS) $(RUN_ARGS)
 
 # Utility directives
 .PHONY: clean
