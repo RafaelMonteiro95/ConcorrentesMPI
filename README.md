@@ -13,8 +13,7 @@ create: create project structure
 
 
 Set `debug=1` to compile/run in debug mode  
-Set `IN=filename` to feed a file to the program  
-Set `OUT=filename` to write program output to designed file  
+Set `MPIFLAGS=1` to set flags to pass to mpiexec
 Use `CFLAGS+=flags` to add compiler flags  
 Set `CC=compiler` to change compiler  
 Set `NAME=name` to set project name  
